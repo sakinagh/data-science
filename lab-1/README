@@ -1,0 +1,10 @@
+1) Select a file that is not clean from your sources
+2) The file must be at least 50,000 rows and at least 15 columns (attributes)
+3) Using a python program to clean the file and provide the result of the file
+4) Submit the description of how to run, the python (either file.py or file.ipynb) code you
+used as well as the input data file and output data files in the comma value format (
+*.cvs) to fulfill the rubric
+5) Remember to report the location where you go the dataset
+
+
+https://www.kaggle.com/datasets/prasad22/healthcare-dataset
