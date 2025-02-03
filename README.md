@@ -1,1 +1,2 @@
-Different lab projects in thic course.
+
+Different lab projects from data science course.
