@@ -1,0 +1,936 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     placementdata
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+HSC_Marks <= 75
+|   ExtracurricularActivities = No
+|   |   Projects <= 2
+|   |   |   PlacementTraining = No: NotPlaced (1606.0/69.0)
+|   |   |   PlacementTraining = Yes
+|   |   |   |   CGPA <= 8.1: NotPlaced (1629.0/192.0)
+|   |   |   |   CGPA > 8.1
+|   |   |   |   |   AptitudeTestScore <= 73: NotPlaced (39.0/3.0)
+|   |   |   |   |   AptitudeTestScore > 73
+|   |   |   |   |   |   CGPA <= 8.5
+|   |   |   |   |   |   |   HSC_Marks <= 67
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.7: NotPlaced (34.0/5.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.7
+|   |   |   |   |   |   |   |   |   Projects <= 1: Placed (4.0)
+|   |   |   |   |   |   |   |   |   Projects > 1: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   HSC_Marks > 67
+|   |   |   |   |   |   |   |   SSC_Marks <= 70
+|   |   |   |   |   |   |   |   |   SSC_Marks <= 56: Placed (8.0/2.0)
+|   |   |   |   |   |   |   |   |   SSC_Marks > 56: NotPlaced (12.0/2.0)
+|   |   |   |   |   |   |   |   SSC_Marks > 70: Placed (13.0/3.0)
+|   |   |   |   |   |   CGPA > 8.5
+|   |   |   |   |   |   |   AptitudeTestScore <= 78: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 78: Placed (6.0)
+|   |   Projects > 2
+|   |   |   Workshops/Certifications <= 1
+|   |   |   |   PlacementTraining = No: NotPlaced (79.0/7.0)
+|   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   CGPA <= 6.9: NotPlaced (24.0/1.0)
+|   |   |   |   |   CGPA > 6.9
+|   |   |   |   |   |   SSC_Marks <= 56: NotPlaced (23.0/2.0)
+|   |   |   |   |   |   SSC_Marks > 56
+|   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.5
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 70: NotPlaced (15.0/6.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 70: Placed (3.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: Placed (6.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.5: NotPlaced (13.0/3.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   StudentID <= 4113: NotPlaced (10.0/2.0)
+|   |   |   |   |   |   |   |   StudentID > 4113
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.4
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.7: NotPlaced (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 7.7: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.4: Placed (4.0)
+|   |   |   Workshops/Certifications > 1
+|   |   |   |   PlacementTraining = No
+|   |   |   |   |   AptitudeTestScore <= 81: NotPlaced (8.0)
+|   |   |   |   |   AptitudeTestScore > 81
+|   |   |   |   |   |   SSC_Marks <= 77
+|   |   |   |   |   |   |   HSC_Marks <= 66
+|   |   |   |   |   |   |   |   SSC_Marks <= 57: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   SSC_Marks > 57: Placed (3.0)
+|   |   |   |   |   |   |   HSC_Marks > 66: NotPlaced (4.0)
+|   |   |   |   |   |   SSC_Marks > 77: Placed (4.0)
+|   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   SSC_Marks <= 76: Placed (31.0/8.0)
+|   |   |   |   |   SSC_Marks > 76
+|   |   |   |   |   |   SoftSkillsRating <= 4.7
+|   |   |   |   |   |   |   StudentID <= 8409: NotPlaced (9.0)
+|   |   |   |   |   |   |   StudentID > 8409
+|   |   |   |   |   |   |   |   HSC_Marks <= 70: Placed (2.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 70: NotPlaced (2.0)
+|   |   |   |   |   |   SoftSkillsRating > 4.7: Placed (3.0)
+|   ExtracurricularActivities = Yes
+|   |   AptitudeTestScore <= 80
+|   |   |   PlacementTraining = No
+|   |   |   |   SoftSkillsRating <= 4.2: NotPlaced (150.0/13.0)
+|   |   |   |   SoftSkillsRating > 4.2
+|   |   |   |   |   HSC_Marks <= 71
+|   |   |   |   |   |   Workshops/Certifications <= 1: NotPlaced (101.0/15.0)
+|   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   CGPA <= 7.8
+|   |   |   |   |   |   |   |   AptitudeTestScore <= 77: NotPlaced (17.0)
+|   |   |   |   |   |   |   |   AptitudeTestScore > 77
+|   |   |   |   |   |   |   |   |   Projects <= 2: Placed (4.0/1.0)
+|   |   |   |   |   |   |   |   |   Projects > 2: NotPlaced (2.0)
+|   |   |   |   |   |   |   CGPA > 7.8
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.4: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.4: Placed (8.0/1.0)
+|   |   |   |   |   HSC_Marks > 71
+|   |   |   |   |   |   Internships <= 0: NotPlaced (3.0)
+|   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   SSC_Marks <= 59: NotPlaced (5.0)
+|   |   |   |   |   |   |   |   SSC_Marks > 59
+|   |   |   |   |   |   |   |   |   CGPA <= 8: Placed (7.0)
+|   |   |   |   |   |   |   |   |   CGPA > 8: NotPlaced (2.0)
+|   |   |   |   |   |   |   Internships > 1: Placed (2.0)
+|   |   |   PlacementTraining = Yes
+|   |   |   |   Projects <= 1
+|   |   |   |   |   SSC_Marks <= 79: NotPlaced (332.0/65.0)
+|   |   |   |   |   SSC_Marks > 79
+|   |   |   |   |   |   SoftSkillsRating <= 4.5: NotPlaced (21.0/8.0)
+|   |   |   |   |   |   SoftSkillsRating > 4.5: Placed (4.0)
+|   |   |   |   Projects > 1
+|   |   |   |   |   CGPA <= 8
+|   |   |   |   |   |   SoftSkillsRating <= 4.2
+|   |   |   |   |   |   |   SoftSkillsRating <= 3.7
+|   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   CGPA <= 7.5: NotPlaced (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 7.5: Placed (5.0/1.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0: NotPlaced (9.0/2.0)
+|   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   StudentID <= 5059: Placed (4.0)
+|   |   |   |   |   |   |   |   |   StudentID > 5059
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 68: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 68: NotPlaced (3.0)
+|   |   |   |   |   |   |   SoftSkillsRating > 3.7
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 1: NotPlaced (109.0/17.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4: NotPlaced (15.0/2.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4
+|   |   |   |   |   |   |   |   |   |   Projects <= 2: Placed (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 2: NotPlaced (4.0/1.0)
+|   |   |   |   |   |   SoftSkillsRating > 4.2
+|   |   |   |   |   |   |   AptitudeTestScore <= 68: NotPlaced (22.0/3.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 68
+|   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 77
+|   |   |   |   |   |   |   |   |   |   |   Internships <= 0: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.6: NotPlaced (21.0/7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.6: Placed (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 77
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 71
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 2960: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID > 2960: Placed (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 71: Placed (6.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.4
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 74: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 74: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 1360: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 1360
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 1916: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 1916: NotPlaced (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.5: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.4
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 74
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.4: NotPlaced (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.4: Placed (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 74: NotPlaced (16.0)
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 1: NotPlaced (22.0/4.0)
+|   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 73: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 73: NotPlaced (14.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Internships > 1: NotPlaced (5.0/1.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   CGPA <= 7.1: Placed (12.0/2.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 7.1: NotPlaced (39.0/14.0)
+|   |   |   |   |   CGPA > 8
+|   |   |   |   |   |   SSC_Marks <= 69
+|   |   |   |   |   |   |   SSC_Marks <= 65
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 76
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.1: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 8.1
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.3: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8.3: NotPlaced (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 76: Placed (3.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0: NotPlaced (9.0/1.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   |   SSC_Marks <= 55: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   SSC_Marks > 55: Placed (6.0/1.0)
+|   |   |   |   |   |   |   SSC_Marks > 65: NotPlaced (9.0)
+|   |   |   |   |   |   SSC_Marks > 69
+|   |   |   |   |   |   |   HSC_Marks <= 72
+|   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 66
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 6889: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 6889: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 66: NotPlaced (5.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.5: Placed (13.0/1.0)
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.5
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 69: NotPlaced (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 69: Placed (2.0)
+|   |   |   |   |   |   |   |   Projects > 2: NotPlaced (47.0/23.0)
+|   |   |   |   |   |   |   HSC_Marks > 72
+|   |   |   |   |   |   |   |   Internships <= 0: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   Internships > 0: Placed (17.0/1.0)
+|   |   AptitudeTestScore > 80
+|   |   |   Workshops/Certifications <= 1
+|   |   |   |   PlacementTraining = No
+|   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   SSC_Marks <= 58: NotPlaced (9.0)
+|   |   |   |   |   |   |   SSC_Marks > 58
+|   |   |   |   |   |   |   |   Internships <= 0
+|   |   |   |   |   |   |   |   |   SSC_Marks <= 65: Placed (3.0)
+|   |   |   |   |   |   |   |   |   SSC_Marks > 65
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 82: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 82: NotPlaced (5.0/1.0)
+|   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 81: Placed (2.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 81: NotPlaced (11.0/2.0)
+|   |   |   |   |   |   Workshops/Certifications > 0: NotPlaced (24.0/3.0)
+|   |   |   |   |   Internships > 1
+|   |   |   |   |   |   AptitudeTestScore <= 86
+|   |   |   |   |   |   |   SSC_Marks <= 69: Placed (4.0)
+|   |   |   |   |   |   |   SSC_Marks > 69
+|   |   |   |   |   |   |   |   HSC_Marks <= 64: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 64
+|   |   |   |   |   |   |   |   |   HSC_Marks <= 69: Placed (4.0)
+|   |   |   |   |   |   |   |   |   HSC_Marks > 69: NotPlaced (2.0)
+|   |   |   |   |   |   AptitudeTestScore > 86: NotPlaced (3.0)
+|   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   Internships <= 0
+|   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   AptitudeTestScore <= 85
+|   |   |   |   |   |   |   |   |   CGPA <= 8.2
+|   |   |   |   |   |   |   |   |   |   StudentID <= 2149: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   StudentID > 2149
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.1: NotPlaced (7.0)
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.1
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.8: NotPlaced (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.8: Placed (2.0)
+|   |   |   |   |   |   |   |   |   CGPA > 8.2: Placed (6.0/1.0)
+|   |   |   |   |   |   |   |   AptitudeTestScore > 85: Placed (9.0/1.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   SSC_Marks <= 69: Placed (2.0)
+|   |   |   |   |   |   |   |   |   SSC_Marks > 69: NotPlaced (5.0/1.0)
+|   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 82
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 62: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 62: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 82: Placed (2.0)
+|   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   Projects <= 0: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 0
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 4521
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 2784
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 69: NotPlaced (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 69: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID > 2784: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 4521
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 8566: NotPlaced (17.0)
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID > 8566: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 76
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.3
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 67: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 67: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.5: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 7.3: NotPlaced (23.0/2.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 76
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 67
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7: NotPlaced (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 67: Placed (5.0)
+|   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   CGPA <= 8.2
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 632: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 632: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 8.2: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 65: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 65: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 3.9: Placed (7.0/1.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 3.9
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 82
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.5: NotPlaced (10.0)
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.5: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 82
+|   |   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.6: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.6
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.6: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.6: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 996: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID > 996
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.6
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 82: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 82: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8.1: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.6: NotPlaced (8.0)
+|   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.1: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.1: Placed (2.0)
+|   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   StudentID <= 2491: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   StudentID > 2491
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 3484: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 3484: NotPlaced (2.0)
+|   |   |   |   |   Projects > 2
+|   |   |   |   |   |   AptitudeTestScore <= 82
+|   |   |   |   |   |   |   Internships <= 0: NotPlaced (4.0)
+|   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.5
+|   |   |   |   |   |   |   |   |   CGPA <= 8.3: NotPlaced (15.0/2.0)
+|   |   |   |   |   |   |   |   |   CGPA > 8.3: Placed (2.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.5: Placed (11.0/3.0)
+|   |   |   |   |   |   AptitudeTestScore > 82
+|   |   |   |   |   |   |   AptitudeTestScore <= 88
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.4
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 70: NotPlaced (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 70
+|   |   |   |   |   |   |   |   |   |   |   Internships <= 0: Placed (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 87
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 85: Placed (5.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 85: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 87: Placed (2.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   CGPA <= 7.7: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 7.7
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 66
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.1: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8.1: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 66: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.4: Placed (39.0/9.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 88
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 0: Placed (22.0/1.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   CGPA <= 7.5: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   CGPA > 7.5: Placed (9.0/2.0)
+|   |   |   Workshops/Certifications > 1
+|   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   Workshops/Certifications <= 2
+|   |   |   |   |   |   StudentID <= 1004: Placed (8.0)
+|   |   |   |   |   |   StudentID > 1004
+|   |   |   |   |   |   |   SoftSkillsRating <= 4.1
+|   |   |   |   |   |   |   |   HSC_Marks <= 67: Placed (9.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 67
+|   |   |   |   |   |   |   |   |   PlacementTraining = No: Placed (2.0)
+|   |   |   |   |   |   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 71
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.5: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 7.5
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 85
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 82: Placed (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 82: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 85: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 71: NotPlaced (5.0)
+|   |   |   |   |   |   |   SoftSkillsRating > 4.1
+|   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.2
+|   |   |   |   |   |   |   |   |   |   CGPA <= 8.3: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 8.3: Placed (2.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.2: NotPlaced (10.0/1.0)
+|   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   PlacementTraining = No: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 75: NotPlaced (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 75: Placed (5.0)
+|   |   |   |   |   Workshops/Certifications > 2: NotPlaced (8.0)
+|   |   |   |   SoftSkillsRating > 4.3
+|   |   |   |   |   PlacementTraining = No
+|   |   |   |   |   |   CGPA <= 7.3: NotPlaced (6.0)
+|   |   |   |   |   |   CGPA > 7.3
+|   |   |   |   |   |   |   Workshops/Certifications <= 2
+|   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   SSC_Marks <= 73: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   SSC_Marks > 73: Placed (11.0/1.0)
+|   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.7: Placed (2.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.7
+|   |   |   |   |   |   |   |   |   |   Projects <= 2: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 3725: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 3725: NotPlaced (2.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 2: NotPlaced (4.0/1.0)
+|   |   |   |   |   PlacementTraining = Yes: Placed (156.0/26.0)
+HSC_Marks > 75
+|   ExtracurricularActivities = No
+|   |   AptitudeTestScore <= 84
+|   |   |   Workshops/Certifications <= 1
+|   |   |   |   AptitudeTestScore <= 73: NotPlaced (78.0/6.0)
+|   |   |   |   AptitudeTestScore > 73
+|   |   |   |   |   PlacementTraining = No: NotPlaced (49.0/7.0)
+|   |   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   |   SSC_Marks <= 59
+|   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   HSC_Marks <= 81
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 79: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 79: Placed (4.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 81: NotPlaced (12.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 0: NotPlaced (20.0/1.0)
+|   |   |   |   |   |   SSC_Marks > 59
+|   |   |   |   |   |   |   AptitudeTestScore <= 74
+|   |   |   |   |   |   |   |   CGPA <= 8: Placed (8.0/1.0)
+|   |   |   |   |   |   |   |   CGPA > 8: NotPlaced (2.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 74
+|   |   |   |   |   |   |   |   HSC_Marks <= 79: NotPlaced (10.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 79
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 63: Placed (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 63
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.1
+|   |   |   |   |   |   |   |   |   |   |   |   Projects <= 2: NotPlaced (27.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 0: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 4967: NotPlaced (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 4967: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 78: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 78: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 8.1
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 80: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 80: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   Internships <= 0: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 79
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 82: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 82
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 5572: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 5572: NotPlaced (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 79: NotPlaced (11.0)
+|   |   |   |   |   |   |   |   |   |   |   Internships > 1: Placed (2.0)
+|   |   |   Workshops/Certifications > 1
+|   |   |   |   SoftSkillsRating <= 4.5
+|   |   |   |   |   SSC_Marks <= 64: NotPlaced (13.0)
+|   |   |   |   |   SSC_Marks > 64
+|   |   |   |   |   |   SSC_Marks <= 85
+|   |   |   |   |   |   |   PlacementTraining = No
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.4: NotPlaced (8.0/1.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.4: Placed (2.0)
+|   |   |   |   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 77: Placed (10.0/2.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 77
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 75: NotPlaced (7.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 75: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   Internships > 1: NotPlaced (8.0/2.0)
+|   |   |   |   |   |   SSC_Marks > 85: Placed (3.0)
+|   |   |   |   SoftSkillsRating > 4.5
+|   |   |   |   |   PlacementTraining = No
+|   |   |   |   |   |   AptitudeTestScore <= 78: NotPlaced (3.0)
+|   |   |   |   |   |   AptitudeTestScore > 78: Placed (3.0)
+|   |   |   |   |   PlacementTraining = Yes: Placed (29.0/9.0)
+|   |   AptitudeTestScore > 84
+|   |   |   PlacementTraining = No
+|   |   |   |   StudentID <= 1097: NotPlaced (8.0)
+|   |   |   |   StudentID > 1097
+|   |   |   |   |   StudentID <= 8151
+|   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   SSC_Marks <= 83: Placed (10.0)
+|   |   |   |   |   |   |   SSC_Marks > 83: NotPlaced (2.0)
+|   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   AptitudeTestScore <= 87: NotPlaced (3.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 87: Placed (4.0/1.0)
+|   |   |   |   |   StudentID > 8151: NotPlaced (5.0)
+|   |   |   PlacementTraining = Yes
+|   |   |   |   Projects <= 2
+|   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   AptitudeTestScore <= 86
+|   |   |   |   |   |   |   Workshops/Certifications <= 1: Placed (5.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   StudentID <= 6632: Placed (4.0)
+|   |   |   |   |   |   |   |   StudentID > 6632: NotPlaced (2.0)
+|   |   |   |   |   |   AptitudeTestScore > 86
+|   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 0: NotPlaced (6.0/2.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 0: Placed (6.0/1.0)
+|   |   |   |   |   |   |   Internships > 1: NotPlaced (3.0)
+|   |   |   |   |   Projects > 1
+|   |   |   |   |   |   SSC_Marks <= 61: NotPlaced (8.0/1.0)
+|   |   |   |   |   |   SSC_Marks > 61
+|   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   CGPA <= 8
+|   |   |   |   |   |   |   |   |   StudentID <= 5884: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   StudentID > 5884: Placed (3.0)
+|   |   |   |   |   |   |   |   CGPA > 8: Placed (6.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   StudentID <= 4151: Placed (3.0)
+|   |   |   |   |   |   |   |   StudentID > 4151
+|   |   |   |   |   |   |   |   |   CGPA <= 7.8: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   CGPA > 7.8: NotPlaced (6.0)
+|   |   |   |   Projects > 2
+|   |   |   |   |   CGPA <= 7.9
+|   |   |   |   |   |   AptitudeTestScore <= 88: NotPlaced (14.0/5.0)
+|   |   |   |   |   |   AptitudeTestScore > 88
+|   |   |   |   |   |   |   StudentID <= 5146
+|   |   |   |   |   |   |   |   HSC_Marks <= 83: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 83: Placed (5.0/1.0)
+|   |   |   |   |   |   |   StudentID > 5146: Placed (7.0)
+|   |   |   |   |   CGPA > 7.9
+|   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   HSC_Marks <= 84
+|   |   |   |   |   |   |   |   StudentID <= 2815: Placed (6.0)
+|   |   |   |   |   |   |   |   StudentID > 2815
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 87: Placed (2.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 87
+|   |   |   |   |   |   |   |   |   |   StudentID <= 8016: NotPlaced (6.0)
+|   |   |   |   |   |   |   |   |   |   StudentID > 8016: Placed (3.0)
+|   |   |   |   |   |   |   HSC_Marks > 84: Placed (9.0)
+|   |   |   |   |   |   Internships > 1: Placed (24.0/5.0)
+|   ExtracurricularActivities = Yes
+|   |   AptitudeTestScore <= 85
+|   |   |   PlacementTraining = No
+|   |   |   |   HSC_Marks <= 81: NotPlaced (105.0/23.0)
+|   |   |   |   HSC_Marks > 81
+|   |   |   |   |   SSC_Marks <= 62
+|   |   |   |   |   |   HSC_Marks <= 85: NotPlaced (18.0/1.0)
+|   |   |   |   |   |   HSC_Marks > 85: Placed (3.0/1.0)
+|   |   |   |   |   SSC_Marks > 62
+|   |   |   |   |   |   SoftSkillsRating <= 4.4
+|   |   |   |   |   |   |   Internships <= 0
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 74: Placed (4.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 74: NotPlaced (10.0/2.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: Placed (4.0)
+|   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   Projects <= 1: NotPlaced (7.0)
+|   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 84: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 84: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 2: NotPlaced (8.0/1.0)
+|   |   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   |   CGPA <= 8.3
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.8
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.7: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.7: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 7.8: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 8.3: NotPlaced (4.0)
+|   |   |   |   |   |   SoftSkillsRating > 4.4
+|   |   |   |   |   |   |   AptitudeTestScore <= 71: NotPlaced (4.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 71: Placed (70.0/26.0)
+|   |   |   PlacementTraining = Yes
+|   |   |   |   AptitudeTestScore <= 78
+|   |   |   |   |   SSC_Marks <= 71
+|   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   Projects <= 0: Placed (2.0)
+|   |   |   |   |   |   |   |   Projects > 0
+|   |   |   |   |   |   |   |   |   CGPA <= 7.4
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 77: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 77: Placed (6.0)
+|   |   |   |   |   |   |   |   |   CGPA > 7.4
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 55: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 55: NotPlaced (8.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 2
+|   |   |   |   |   |   |   |   |   StudentID <= 5597: NotPlaced (14.0)
+|   |   |   |   |   |   |   |   |   StudentID > 5597
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 58: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 58: NotPlaced (12.0/2.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 2: Placed (3.0/1.0)
+|   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3: NotPlaced (22.0/2.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.3
+|   |   |   |   |   |   |   |   |   Internships <= 1: Placed (15.0/5.0)
+|   |   |   |   |   |   |   |   |   Internships > 1: NotPlaced (2.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   SoftSkillsRating <= 3.9: Placed (4.0)
+|   |   |   |   |   |   |   |   |   SoftSkillsRating > 3.9
+|   |   |   |   |   |   |   |   |   |   CGPA <= 8.5
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 72: Placed (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 72: NotPlaced (29.0/10.0)
+|   |   |   |   |   |   |   |   |   |   CGPA > 8.5: Placed (4.0)
+|   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 2
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 66
+|   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 3006: NotPlaced (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID > 3006
+|   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 6415: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 6415: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   |   |   |   |   Internships <= 1: NotPlaced (10.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Internships > 1: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 66
+|   |   |   |   |   |   |   |   |   |   |   Internships <= 0: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Internships > 0: Placed (13.0/3.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 2: Placed (3.0)
+|   |   |   |   |   SSC_Marks > 71
+|   |   |   |   |   |   CGPA <= 8.4
+|   |   |   |   |   |   |   AptitudeTestScore <= 69
+|   |   |   |   |   |   |   |   HSC_Marks <= 83
+|   |   |   |   |   |   |   |   |   HSC_Marks <= 82: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   HSC_Marks > 82: Placed (2.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 83: NotPlaced (7.0)
+|   |   |   |   |   |   |   AptitudeTestScore > 69
+|   |   |   |   |   |   |   |   Internships <= 0
+|   |   |   |   |   |   |   |   |   StudentID <= 4155: Placed (27.0/4.0)
+|   |   |   |   |   |   |   |   |   StudentID > 4155
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 86
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 84
+|   |   |   |   |   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 75: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 75: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Projects > 1: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 76: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 76: NotPlaced (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 84: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 86: Placed (5.0)
+|   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   SSC_Marks <= 79
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.6
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.6
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 7898
+|   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 72: Placed (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 72
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 81
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 6474: NotPlaced (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 6474: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 81
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.5: NotPlaced (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.5: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Projects > 2: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 76: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 76: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   StudentID > 7898: NotPlaced (15.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 7.6
+|   |   |   |   |   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 75: Placed (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 75
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 1: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 1: Placed (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 1: Placed (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Projects > 2
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 77
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 81: Placed (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 81
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3: NotPlaced (7.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 77: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 82
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 6750: Placed (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 6750: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 82: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.6
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.3: NotPlaced (22.0/4.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 8.3
+|   |   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 1: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 1: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   SSC_Marks > 79
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 74
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 70: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 70
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.9
+|   |   |   |   |   |   |   |   |   |   |   |   |   Projects <= 1: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Projects > 1: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.9: NotPlaced (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 74: Placed (31.0/5.0)
+|   |   |   |   |   |   CGPA > 8.4
+|   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   StudentID <= 3073: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   StudentID > 3073: Placed (5.0)
+|   |   |   |   |   |   |   |   |   Internships > 1: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   Projects > 2: Placed (10.0/2.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   StudentID <= 674: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   StudentID > 674: Placed (27.0/1.0)
+|   |   |   |   AptitudeTestScore > 78
+|   |   |   |   |   Projects <= 2
+|   |   |   |   |   |   AptitudeTestScore <= 84
+|   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   HSC_Marks <= 84
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 83
+|   |   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.2
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 82
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 6058: Placed (7.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 6058: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 82
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 72: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 72: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8.2: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   |   Projects > 1: NotPlaced (29.0/10.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 83: NotPlaced (12.0/1.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 8942: NotPlaced (13.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 8942
+|   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 71: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 71: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 1: NotPlaced (29.0/13.0)
+|   |   |   |   |   |   |   |   HSC_Marks > 84
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 83
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 78: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 78
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 86: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 86: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 85: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 85
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 1: Placed (12.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 1: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   |   Projects <= 1: Placed (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.5
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID <= 2739: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   StudentID > 2739: NotPlaced (4.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: Placed (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.5: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 83: Placed (12.0/1.0)
+|   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   SSC_Marks <= 75
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 80
+|   |   |   |   |   |   |   |   |   |   Projects <= 1: Placed (8.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 63: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 63
+|   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 72: Placed (6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 72
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 82: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 82: Placed (2.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 80
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 2
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 747: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 747: NotPlaced (37.0/13.0)
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 2
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 65: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 65: NotPlaced (5.0/1.0)
+|   |   |   |   |   |   |   |   SSC_Marks > 75
+|   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 81
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 79: Placed (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 79: NotPlaced (12.0/2.0)
+|   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 81: Placed (14.0)
+|   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 2: Placed (39.0/6.0)
+|   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 2
+|   |   |   |   |   |   |   |   |   |   |   StudentID <= 7146: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   StudentID > 7146: NotPlaced (2.0)
+|   |   |   |   |   |   AptitudeTestScore > 84
+|   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   SoftSkillsRating <= 4.1: NotPlaced (5.0/1.0)
+|   |   |   |   |   |   |   |   SoftSkillsRating > 4.1: Placed (16.0/3.0)
+|   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 2: Placed (39.0/7.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 2: NotPlaced (3.0/1.0)
+|   |   |   |   |   Projects > 2
+|   |   |   |   |   |   CGPA <= 8.4
+|   |   |   |   |   |   |   SSC_Marks <= 75
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0: Placed (57.0/22.0)
+|   |   |   |   |   |   |   |   |   Workshops/Certifications > 0: NotPlaced (34.0/13.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 81: Placed (28.0/3.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 81
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 59: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 59
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3: NotPlaced (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore <= 84: Placed (30.0/6.0)
+|   |   |   |   |   |   |   |   |   |   |   |   AptitudeTestScore > 84
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.2
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.8: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 7.8: Placed (8.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8.2: NotPlaced (5.0)
+|   |   |   |   |   |   |   SSC_Marks > 75
+|   |   |   |   |   |   |   |   Workshops/Certifications <= 2
+|   |   |   |   |   |   |   |   |   Internships <= 0
+|   |   |   |   |   |   |   |   |   |   HSC_Marks <= 83
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.6
+|   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 81
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.1: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   CGPA > 8.1: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 81: NotPlaced (5.0)
+|   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.6: Placed (4.0)
+|   |   |   |   |   |   |   |   |   |   HSC_Marks > 83: Placed (21.0/3.0)
+|   |   |   |   |   |   |   |   |   Internships > 0: Placed (223.0/43.0)
+|   |   |   |   |   |   |   |   Workshops/Certifications > 2
+|   |   |   |   |   |   |   |   |   HSC_Marks <= 80: Placed (3.0)
+|   |   |   |   |   |   |   |   |   HSC_Marks > 80
+|   |   |   |   |   |   |   |   |   |   Internships <= 0: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 7.9
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating <= 4.3: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   SoftSkillsRating > 4.3: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 7.9: NotPlaced (4.0)
+|   |   |   |   |   |   CGPA > 8.4
+|   |   |   |   |   |   |   Internships <= 0
+|   |   |   |   |   |   |   |   CGPA <= 8.5
+|   |   |   |   |   |   |   |   |   AptitudeTestScore <= 84: NotPlaced (4.0)
+|   |   |   |   |   |   |   |   |   AptitudeTestScore > 84: Placed (2.0)
+|   |   |   |   |   |   |   |   CGPA > 8.5: Placed (10.0)
+|   |   |   |   |   |   |   Internships > 0: Placed (110.0/10.0)
+|   |   AptitudeTestScore > 85
+|   |   |   Projects <= 2
+|   |   |   |   Workshops/Certifications <= 1
+|   |   |   |   |   PlacementTraining = No
+|   |   |   |   |   |   StudentID <= 6391: NotPlaced (7.0)
+|   |   |   |   |   |   StudentID > 6391: Placed (3.0/1.0)
+|   |   |   |   |   PlacementTraining = Yes
+|   |   |   |   |   |   StudentID <= 1555: Placed (19.0/1.0)
+|   |   |   |   |   |   StudentID > 1555
+|   |   |   |   |   |   |   SoftSkillsRating <= 4.6
+|   |   |   |   |   |   |   |   CGPA <= 8.4
+|   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   |   |   Internships <= 0: NotPlaced (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   Internships > 0: Placed (7.0/2.0)
+|   |   |   |   |   |   |   |   |   |   Projects > 1
+|   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 78: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 78
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks <= 81: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   HSC_Marks > 81
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Internships <= 0: Placed (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   Internships > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks <= 77: NotPlaced (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   SSC_Marks > 77: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   Workshops/Certifications > 0
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA <= 6.7: Placed (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   CGPA > 6.7: NotPlaced (12.0/3.0)
+|   |   |   |   |   |   |   |   |   Internships > 1: NotPlaced (22.0/3.0)
+|   |   |   |   |   |   |   |   CGPA > 8.4
+|   |   |   |   |   |   |   |   |   Internships <= 1
+|   |   |   |   |   |   |   |   |   |   SSC_Marks <= 71: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   |   |   SSC_Marks > 71: Placed (2.0)
+|   |   |   |   |   |   |   |   |   Internships > 1: Placed (5.0)
+|   |   |   |   |   |   |   SoftSkillsRating > 4.6
+|   |   |   |   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   |   |   |   StudentID <= 2991: NotPlaced (3.0)
+|   |   |   |   |   |   |   |   |   StudentID > 2991
+|   |   |   |   |   |   |   |   |   |   Internships <= 1: Placed (5.0)
+|   |   |   |   |   |   |   |   |   |   Internships > 1
+|   |   |   |   |   |   |   |   |   |   |   CGPA <= 8.3: Placed (3.0)
+|   |   |   |   |   |   |   |   |   |   |   CGPA > 8.3: NotPlaced (2.0)
+|   |   |   |   |   |   |   |   Projects > 1: Placed (30.0/9.0)
+|   |   |   |   Workshops/Certifications > 1
+|   |   |   |   |   Projects <= 1
+|   |   |   |   |   |   CGPA <= 8
+|   |   |   |   |   |   |   CGPA <= 7.1: Placed (7.0/2.0)
+|   |   |   |   |   |   |   CGPA > 7.1
+|   |   |   |   |   |   |   |   StudentID <= 8371: NotPlaced (18.0/2.0)
+|   |   |   |   |   |   |   |   StudentID > 8371: Placed (5.0)
+|   |   |   |   |   |   CGPA > 8: Placed (33.0/3.0)
+|   |   |   |   |   Projects > 1: Placed (135.0/20.0)
+|   |   |   Projects > 2: Placed (1936.0/224.0)
+
+Number of Leaves  : 	442
+
+Size of the tree : 	883
+
+
+Time taken to build model: 0.26 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        7785               77.85   %
+Incorrectly Classified Instances      2215               22.15   %
+Kappa statistic                          0.5427
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 Class
+                 NotPlaced
+                 Placed
+Weighted Avg.    
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4781 1022 |    a = NotPlaced
+ 1193 3004 |    b = Placed
+

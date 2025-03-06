@@ -1,0 +1,51 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     placementdata
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    20-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 3.67 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        7907               79.07   %
+Incorrectly Classified Instances      2093               20.93   %
+Kappa statistic                          0.567 
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 Class
+                 NotPlaced
+                 Placed
+Weighted Avg.    
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4872  931 |    a = NotPlaced
+ 1162 3035 |    b = Placed
+

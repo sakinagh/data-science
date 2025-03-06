@@ -1,0 +1,68 @@
+README
+
+Overview
+
+This project involves performing supervised Bayesian classification and model comparison using Weka. 
+The dataset contains placement-related attributes for students, and the goal is to predict PlacementStatus using various classification techniques.
+
+
+Files Included
+
+report.txt - Detailed report of the analysis, including results, findings, and evaluations.
+
+1_ranker_with_gain_ratio_attribute_eval.txt - Attribute ranking results using Gain Ratio and Ranker search method.
+
+2_naive_bayes.txt - Results from Naïve Bayes classification without cross-validation.
+
+3_naive_bayes_with_cross_validat_10_fold.txt - Results from Naïve Bayes classification with 10-fold cross-validation.
+
+4_j48.txt - Results from J48 classification without cross-validation.
+
+5_j48_10_fold.txt - Results from J48 classification with 10-fold cross-validation.
+
+6_random_forest.txt - Results from Random Forest classification without cross-validation.
+
+7_random_forest_10_fold.txt - Results from Random Forest classification with 10-fold cross-validation.
+
+8_one_r.txt - Results from OneR classification without cross-validation.
+
+9_one_r_10_fold.txt - Results from OneR classification with 10-fold cross-validation.
+
+10_random_forest_20_fold.txt - Results from Random Forest classification with 20-fold cross-validation.
+
+11_random_forest_5_fold.txt - Results from Random Forest classification with 5-fold cross-validation.
+
+placementdata.csv.arff - The dataset in ARFF format for Weka.
+
+placementdata.csv - The dataset in csv format. 
+
+screenshot of lab working - Snippet of loading the file into Weka.
+
+
+
+Steps to Reproduce
+
+Dataset Preparation: The dataset was cleaned and converted into ARFF format using Weka's ARFF Viewer.
+PlacementStatus was selected as the class attribute.
+
+Feature Selection: Used Gain Ratio as the attribute evaluator and Ranker as the search method.
+Top-ranked attributes include Extracurricular Activities, Projects, and Placement Training.
+
+Model Training and Evaluation: Applied Naïve Bayes, J48, Random Forest, and OneR classifiers.
+Compared models using 10-fold, 5-fold, and 20-fold cross-validation.
+
+Findings: Random Forest without cross-validation achieved the highest accuracy (100%).
+J48 with the Discretize filter provided the best balance of accuracy and interpretability.
+Naïve Bayes performed well but was outperformed by decision trees.
+
+To analyze the dataset in Weka:
+
+Open Weka GUI.
+
+Load weka_data.arff into the Explorer.
+
+Navigate to the Classify tab and select a classifier.
+
+Adjust settings as per the report and execute classification.
+
+View evaluation metrics and confusion matrices.

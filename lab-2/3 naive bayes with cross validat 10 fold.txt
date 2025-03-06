@@ -1,0 +1,117 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.bayes.NaiveBayes 
+Relation:     placementdata
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Naive Bayes Classifier
+
+                                Class
+Attribute                   NotPlaced    Placed
+                               (0.58)    (0.42)
+================================================
+StudentID
+  mean                       4989.9586 5015.0751
+  std. dev.                   2891.899 2879.5552
+  weight sum                      5803      4197
+  precision                          1         1
+
+CGPA
+  mean                          7.4677    8.0165
+  std. dev.                     0.6026    0.5471
+  weight sum                      5803      4197
+  precision                        0.1       0.1
+
+Internships
+  mean                          0.9018     1.253
+  std. dev.                     0.5891    0.7106
+  weight sum                      5803      4197
+  precision                          1         1
+
+Projects
+  mean                          1.6759    2.5116
+  std. dev.                     0.7743    0.7487
+  weight sum                      5803      4197
+  precision                          1         1
+
+Workshops/Certifications
+  mean                          0.7346    1.3984
+  std. dev.                     0.7937    0.9064
+  weight sum                      5803      4197
+  precision                          1         1
+
+AptitudeTestScore
+  mean                         75.8294   84.4558
+  std. dev.                     7.4823     6.168
+  weight sum                      5803      4197
+  precision                          1         1
+
+SoftSkillsRating
+  mean                          4.1744    4.5308
+  std. dev.                      0.407    0.3177
+  weight sum                      5803      4197
+  precision                        0.1       0.1
+
+ExtracurricularActivities
+  No                            3580.0     568.0
+  Yes                           2225.0    3631.0
+  [total]                       5805.0    4199.0
+
+PlacementTraining
+  No                            2265.0     419.0
+  Yes                           3540.0    3780.0
+  [total]                       5805.0    4199.0
+
+SSC_Marks
+  mean                         64.9926   74.9207
+  std. dev.                     9.5249    8.7496
+  weight sum                      5803      4197
+  precision                          1         1
+
+HSC_Marks
+  mean                         70.6653   79.8056
+  std. dev.                     7.7416    7.6285
+  weight sum                      5803      4197
+  precision                          1         1
+
+
+
+Time taken to build model: 0.03 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        7950               79.5    %
+Incorrectly Classified Instances      2050               20.5    %
+Kappa statistic                          0.5838
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 Class
+                 NotPlaced
+                 Placed
+Weighted Avg.    
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4610 1193 |    a = NotPlaced
+  857 3340 |    b = Placed
+

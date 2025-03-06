@@ -1,0 +1,56 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.OneR -B 6
+Relation:     placementdata
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+HSC_Marks:
+	< 75.5	-> NotPlaced
+	< 76.5	-> Placed
+	< 77.5	-> NotPlaced
+	>= 77.5	-> Placed
+(7567/10000 instances correct)
+
+
+Time taken to build model: 0.07 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.02 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        7567               75.67   %
+Incorrectly Classified Instances      2433               24.33   %
+Kappa statistic                          0.5043
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 Class
+                 NotPlaced
+                 Placed
+Weighted Avg.    
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4472 1331 |    a = NotPlaced
+ 1102 3095 |    b = Placed
+
