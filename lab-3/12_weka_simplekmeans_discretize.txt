@@ -1,0 +1,69 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 100 -num-slots 1 -S 10
+Relation:     placementdata-weka.filters.unsupervised.attribute.Discretize-B10-M-1.0-Rfirst-last-precision6
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 4
+Within cluster sum of squared errors: 59269.0
+
+Initial starting points (random):
+
+Cluster 0: '\'(7000.3-8000.2]\'','\'(8.06-8.32]\'','\'(0.8-1]\'','\'(2.7-inf)\'','\'(0.9-1.2]\'','\'(84-87]\'','\'(4.44-4.62]\'',No,Yes,'\'(62-65.5]\'','\'(81.8-84.9]\'',Placed
+Cluster 1: '\'(8000.2-9000.1]\'','\'(8.06-8.32]\'','\'(1.8-inf)\'','\'(2.7-inf)\'','\'(1.8-2.1]\'','\'(87-inf)\'','\'(4.62-inf)\'',Yes,Yes,'\'(69-72.5]\'','\'(84.9-inf)\'',Placed
+Cluster 2: '\'(8000.2-9000.1]\'','\'(8.06-8.32]\'','\'(1.8-inf)\'','\'(2.7-inf)\'','\'(1.8-2.1]\'','\'(84-87]\'','\'(4.62-inf)\'',Yes,Yes,'\'(76-79.5]\'','\'(81.8-84.9]\'',Placed
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                                       Cluster#
+Attribute                           Full Data                 0                 1                 2
+                                    (10000.0)          (5495.0)          (3308.0)          (1197.0)
+===================================================================================================
+StudentID                     '(-inf-1000.9]' '(7000.3-8000.2]' '(8000.2-9000.1]'    '(9000.1-inf)'
+CGPA                             '(7.54-7.8]'     '(7.28-7.54]'     '(8.06-8.32]'     '(8.06-8.32]'
+Internships                         '(0.8-1]'         '(0.8-1]'       '(1.8-inf)'       '(1.8-inf)'
+Projects                          '(2.7-inf)'       '(0.9-1.2]'       '(2.7-inf)'       '(2.7-inf)'
+Workshops/Certifications         '(-inf-0.3]'      '(-inf-0.3]'       '(1.8-2.1]'       '(1.8-2.1]'
+AptitudeTestScore                  '(87-inf)'         '(75-78]'        '(87-inf)'         '(84-87]'
+SoftSkillsRating                 '(4.62-inf)'     '(4.08-4.26]'      '(4.62-inf)'      '(4.62-inf)'
+ExtracurricularActivities                 Yes                No               Yes               Yes
+PlacementTraining                         Yes               Yes               Yes               Yes
+SSC_Marks                       '(-inf-58.5]'     '(-inf-58.5]'       '(79.5-83]'       '(76-79.5]'
+HSC_Marks                        '(84.9-inf)'     '(66.3-69.4]'      '(84.9-inf)'     '(81.8-84.9]'
+PlacementStatus                     NotPlaced         NotPlaced            Placed            Placed
+
+
+
+
+Time taken to build model (full training data) : 0.06 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       5495 ( 55%)
+1       3308 ( 33%)
+2       1197 ( 12%)
+

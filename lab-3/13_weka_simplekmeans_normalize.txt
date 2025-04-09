@@ -1,0 +1,69 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 100 -num-slots 1 -S 10
+Relation:     placementdata-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 13
+Within cluster sum of squared errors: 10150.80108655665
+
+Initial starting points (random):
+
+Cluster 0: 0.711371,0.653846,0.5,1,0.333333,0.866667,0.833333,No,Yes,0.285714,0.806452,Placed
+Cluster 1: 0.808881,0.692308,1,1,0.666667,1,1,Yes,Yes,0.485714,1,Placed
+Cluster 2: 0.80398,0.653846,1,1,0.666667,0.866667,1,Yes,Yes,0.628571,0.83871,Placed
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                       Cluster#
+Attribute                   Full Data         0         1         2
+                            (10000.0)  (4740.0)  (2754.0)  (2506.0)
+===================================================================
+StudentID                         0.5    0.4972    0.5164    0.4873
+CGPA                           0.4608    0.3218    0.6503    0.5153
+Internships                    0.5246    0.4169    0.8642    0.3551
+Projects                       0.6755    0.4866    0.9356     0.747
+Workshops/Certifications       0.3377    0.1921    0.6058    0.3187
+AptitudeTestScore              0.6483    0.4724     0.894    0.7111
+SoftSkillsRating               0.7355    0.6087    0.9047    0.7895
+ExtracurricularActivities         Yes        No       Yes       Yes
+PlacementTraining                 Yes       Yes       Yes       Yes
+SSC_Marks                      0.4046    0.2029    0.6433    0.5236
+HSC_Marks                      0.5646    0.3613    0.8314    0.6557
+PlacementStatus             NotPlaced NotPlaced    Placed    Placed
+
+
+
+
+Time taken to build model (full training data) : 0.1 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       4740 ( 47%)
+1       2754 ( 28%)
+2       2506 ( 25%)
+

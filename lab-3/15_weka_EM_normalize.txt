@@ -1,0 +1,98 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.EM -I 100 -N -1 -X 10 -max -1 -ll-cv 1.0E-6 -ll-iter 1.0E-6 -M 1.0E-6 -K 10 -num-slots 1 -S 100
+Relation:     placementdata-weka.filters.unsupervised.attribute.Normalize-S1.0-T0.0
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+EM
+==
+
+Number of clusters selected by cross validation: 3
+Number of iterations performed: 16
+
+
+                              Cluster
+Attribute                           0         1         2
+                               (0.44)    (0.31)    (0.25)
+==========================================================
+StudentID
+  mean                          0.4929    0.5003    0.5122
+  std. dev.                     0.2882    0.2894    0.2884
+
+CGPA
+  mean                          0.4634    0.2883    0.6692
+  std. dev.                     0.2326    0.2016    0.1288
+
+Internships
+  mean                          0.4969    0.3877    0.7425
+  std. dev.                     0.3214    0.2509    0.3336
+
+Projects
+  mean                          0.6662    0.4282    0.9976
+  std. dev.                     0.2649    0.1577    0.0284
+
+Workshops/Certifications
+  mean                          0.3266    0.1607    0.5762
+  std. dev.                     0.3062    0.1873    0.2425
+
+AptitudeTestScore
+  mean                          0.6568    0.4139     0.923
+  std. dev.                     0.2143    0.2184    0.1116
+
+SoftSkillsRating
+  mean                          0.7421    0.5683    0.9306
+  std. dev.                     0.1954    0.2197    0.0974
+
+ExtracurricularActivities
+  No                          1372.677 2702.8687   73.4543
+  Yes                        3040.1605  388.0519 2428.7876
+  [total]                    4412.8374 3090.9206 2502.2419
+PlacementTraining
+  No                          890.7333 1577.2392  217.0274
+  Yes                        3522.1041 1513.6814 2285.2145
+  [total]                    4412.8374 3090.9206 2502.2419
+SSC_Marks
+  mean                          0.4754    0.1003    0.6555
+  std. dev.                     0.2616    0.1187    0.1756
+
+HSC_Marks
+  mean                          0.5692    0.3123     0.868
+  std. dev.                     0.2685    0.1384    0.0975
+
+PlacementStatus
+  NotPlaced                  2554.4233 2923.9268  327.6499
+  Placed                     1858.4141  166.9939  2174.592
+  [total]                    4412.8374 3090.9206 2502.2419
+
+
+Time taken to build model (full training data) : 43.35 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       4257 ( 43%)
+1       3212 ( 32%)
+2       2531 ( 25%)
+
+
+Log likelihood: -0.56023
+

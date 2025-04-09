@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.KStar -B 20 -M a
+Relation:     placementdata-weka.filters.unsupervised.attribute.Discretize-B10-M-1.0-Rfirst-last-precision6
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+KStar Beta Verion (0.1b).
+Copyright (c) 1995-97 by Len Trigg (trigg@cs.waikato.ac.nz).
+Java port to Weka by Abdelaziz Mahoui (am14@cs.waikato.ac.nz).
+
+KStar options : -B 20 -M a 
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        7841               78.41   %
+Incorrectly Classified Instances      2159               21.59   %
+Kappa statistic                          0.5596
+Mean absolute error                      0.2713
+Root mean squared error                  0.3931
+Relative absolute error                 55.6952 %
+Root relative squared error             79.6525 %
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.797    0.234    0.825      0.797    0.811      0.560    0.857     0.884     NotPlaced
+                 0.766    0.203    0.732      0.766    0.749      0.560    0.857     0.804     Placed
+Weighted Avg.    0.784    0.221    0.786      0.784    0.785      0.560    0.857     0.850     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4625 1178 |    a = NotPlaced
+  981 3216 |    b = Placed
+

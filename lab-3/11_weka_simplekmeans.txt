@@ -1,0 +1,69 @@
+=== Run information ===
+
+Scheme:       weka.clusterers.SimpleKMeans -init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 3 -A "weka.core.EuclideanDistance -R first-last" -I 100 -num-slots 1 -S 10
+Relation:     placementdata
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+
+=== Clustering model (full training set) ===
+
+
+kMeans
+======
+
+Number of iterations: 13
+Within cluster sum of squared errors: 10150.801086556647
+
+Initial starting points (random):
+
+Cluster 0: 7114,8.2,1,3,1,86,4.5,No,Yes,65,82,Placed
+Cluster 1: 8089,8.3,2,3,2,90,4.8,Yes,Yes,72,88,Placed
+Cluster 2: 8040,8.2,2,3,2,86,4.8,Yes,Yes,77,83,Placed
+
+Missing values globally replaced with mean/mode
+
+Final cluster centroids:
+                                       Cluster#
+Attribute                   Full Data         0         1         2
+                            (10000.0)  (4740.0)  (2754.0)  (2506.0)
+===================================================================
+StudentID                      5000.5 4972.2816 5164.1674 4874.0096
+CGPA                            7.698    7.3367    8.1908    7.8398
+Internships                    1.0492    0.8338    1.7284    0.7103
+Projects                       2.0266    1.4599    2.8068     2.241
+Workshops/Certifications       1.0132    0.5762    1.8174    0.9561
+AptitudeTestScore             79.4499   74.1734   86.8192   81.3316
+SoftSkillsRating                4.324    4.0957    4.6284    4.4211
+ExtracurricularActivities         Yes        No       Yes       Yes
+PlacementTraining                 Yes       Yes       Yes       Yes
+SSC_Marks                     69.1594   62.1011   77.5149   73.3276
+HSC_Marks                     74.5015   68.2017   82.7741    77.326
+PlacementStatus             NotPlaced NotPlaced    Placed    Placed
+
+
+
+
+Time taken to build model (full training data) : 0.19 seconds
+
+=== Model and evaluation on training set ===
+
+Clustered Instances
+
+0       4740 ( 47%)
+1       2754 ( 28%)
+2       2506 ( 25%)
+

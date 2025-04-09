@@ -1,0 +1,250 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     placementdata-weka.filters.unsupervised.attribute.Discretize-B10-M-1.0-Rfirst-last-precision6
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                             Class
+Variable                                 NotPlaced
+==================================================
+StudentID='(-inf-1000.9]'                  -0.0255
+StudentID='(1000.9-2000.8]'                -0.1272
+StudentID='(2000.8-3000.7]'                 0.0815
+StudentID='(3000.7-4000.6]'                -0.0362
+StudentID='(4000.6-5000.5]'                -0.1022
+StudentID='(5000.5-6000.4]'                 0.0774
+StudentID='(6000.4-7000.3]'                -0.0431
+StudentID='(7000.3-8000.2]'                  0.144
+StudentID='(8000.2-9000.1]'                -0.0698
+StudentID='(9000.1-inf)'                     0.101
+CGPA='(-inf-6.76]'                           0.274
+CGPA='(6.76-7.02]'                         -0.0296
+CGPA='(7.02-7.28]'                         -0.1192
+CGPA='(7.28-7.54]'                          0.3882
+CGPA='(7.54-7.8]'                           0.0705
+CGPA='(7.8-8.06]'                           0.0468
+CGPA='(8.06-8.32]'                         -0.2029
+CGPA='(8.32-8.58]'                         -0.2912
+CGPA='(8.58-8.84]'                         -0.6042
+CGPA='(8.84-inf)'                          -0.8923
+Internships='(-inf-0.2]'                   -0.0972
+Internships='(0.2-0.4]'                          0
+Internships='(0.4-0.6]'                          0
+Internships='(0.6-0.8]'                          0
+Internships='(0.8-1]'                        0.088
+Internships='(1-1.2]'                            0
+Internships='(1.2-1.4]'                          0
+Internships='(1.4-1.6]'                          0
+Internships='(1.6-1.8]'                          0
+Internships='(1.8-inf)'                    -0.0338
+Projects='(-inf-0.3]'                      -0.9076
+Projects='(0.3-0.6]'                             0
+Projects='(0.6-0.9]'                             0
+Projects='(0.9-1.2]'                        0.2407
+Projects='(1.2-1.5]'                             0
+Projects='(1.5-1.8]'                             0
+Projects='(1.8-2.1]'                        0.0769
+Projects='(2.1-2.4]'                             0
+Projects='(2.4-2.7]'                             0
+Projects='(2.7-inf)'                       -0.2822
+Workshops/Certifications='(-inf-0.3]'       0.0366
+Workshops/Certifications='(0.3-0.6]'             0
+Workshops/Certifications='(0.6-0.9]'             0
+Workshops/Certifications='(0.9-1.2]'        0.3587
+Workshops/Certifications='(1.2-1.5]'             0
+Workshops/Certifications='(1.5-1.8]'             0
+Workshops/Certifications='(1.8-2.1]'       -0.3599
+Workshops/Certifications='(2.1-2.4]'             0
+Workshops/Certifications='(2.4-2.7]'             0
+Workshops/Certifications='(2.7-inf)'        0.0283
+AptitudeTestScore='(-inf-63]'               1.2124
+AptitudeTestScore='(63-66]'                 0.9615
+AptitudeTestScore='(66-69]'                 0.6983
+AptitudeTestScore='(69-72]'                 0.3997
+AptitudeTestScore='(72-75]'                 0.1943
+AptitudeTestScore='(75-78]'                 0.2664
+AptitudeTestScore='(78-81]'                -0.0959
+AptitudeTestScore='(81-84]'                -0.0875
+AptitudeTestScore='(84-87]'                -0.4598
+AptitudeTestScore='(87-inf)'               -0.7472
+SoftSkillsRating='(-inf-3.18]'              1.3353
+SoftSkillsRating='(3.18-3.36]'              0.4673
+SoftSkillsRating='(3.36-3.54]'              0.2712
+SoftSkillsRating='(3.54-3.72]'              0.1251
+SoftSkillsRating='(3.72-3.9]'               0.4377
+SoftSkillsRating='(3.9-4.08]'               0.1616
+SoftSkillsRating='(4.08-4.26]'              0.2247
+SoftSkillsRating='(4.26-4.44]'             -0.1047
+SoftSkillsRating='(4.44-4.62]'              -0.095
+SoftSkillsRating='(4.62-inf)'              -0.3493
+ExtracurricularActivities=Yes              -0.7251
+PlacementTraining=Yes                       -0.994
+SSC_Marks='(-inf-58.5]'                     0.3019
+SSC_Marks='(58.5-62]'                       0.0865
+SSC_Marks='(62-65.5]'                       0.2871
+SSC_Marks='(65.5-69]'                        0.124
+SSC_Marks='(69-72.5]'                       0.1115
+SSC_Marks='(72.5-76]'                       0.0239
+SSC_Marks='(76-79.5]'                      -0.1732
+SSC_Marks='(79.5-83]'                      -0.4057
+SSC_Marks='(83-86.5]'                      -0.6573
+SSC_Marks='(86.5-inf)'                     -0.3597
+HSC_Marks='(-inf-60.1]'                      0.081
+HSC_Marks='(60.1-63.2]'                     0.2338
+HSC_Marks='(63.2-66.3]'                     0.1907
+HSC_Marks='(66.3-69.4]'                     0.2355
+HSC_Marks='(69.4-72.5]'                     0.2067
+HSC_Marks='(72.5-75.6]'                     0.0058
+HSC_Marks='(75.6-78.7]'                    -0.1584
+HSC_Marks='(78.7-81.8]'                    -0.0599
+HSC_Marks='(81.8-84.9]'                    -0.1745
+HSC_Marks='(84.9-inf)'                     -0.3951
+Intercept                                    1.766
+
+
+Odds Ratios...
+                                             Class
+Variable                                 NotPlaced
+==================================================
+StudentID='(-inf-1000.9]'                   0.9748
+StudentID='(1000.9-2000.8]'                 0.8806
+StudentID='(2000.8-3000.7]'                 1.0849
+StudentID='(3000.7-4000.6]'                 0.9645
+StudentID='(4000.6-5000.5]'                 0.9029
+StudentID='(5000.5-6000.4]'                 1.0805
+StudentID='(6000.4-7000.3]'                 0.9578
+StudentID='(7000.3-8000.2]'                 1.1549
+StudentID='(8000.2-9000.1]'                 0.9326
+StudentID='(9000.1-inf)'                    1.1062
+CGPA='(-inf-6.76]'                          1.3152
+CGPA='(6.76-7.02]'                          0.9709
+CGPA='(7.02-7.28]'                          0.8876
+CGPA='(7.28-7.54]'                          1.4743
+CGPA='(7.54-7.8]'                           1.0731
+CGPA='(7.8-8.06]'                           1.0479
+CGPA='(8.06-8.32]'                          0.8163
+CGPA='(8.32-8.58]'                          0.7473
+CGPA='(8.58-8.84]'                          0.5465
+CGPA='(8.84-inf)'                           0.4097
+Internships='(-inf-0.2]'                    0.9074
+Internships='(0.2-0.4]'                          1
+Internships='(0.4-0.6]'                          1
+Internships='(0.6-0.8]'                          1
+Internships='(0.8-1]'                        1.092
+Internships='(1-1.2]'                            1
+Internships='(1.2-1.4]'                          1
+Internships='(1.4-1.6]'                          1
+Internships='(1.6-1.8]'                          1
+Internships='(1.8-inf)'                     0.9668
+Projects='(-inf-0.3]'                       0.4035
+Projects='(0.3-0.6]'                             1
+Projects='(0.6-0.9]'                             1
+Projects='(0.9-1.2]'                        1.2721
+Projects='(1.2-1.5]'                             1
+Projects='(1.5-1.8]'                             1
+Projects='(1.8-2.1]'                        1.0799
+Projects='(2.1-2.4]'                             1
+Projects='(2.4-2.7]'                             1
+Projects='(2.7-inf)'                        0.7541
+Workshops/Certifications='(-inf-0.3]'       1.0373
+Workshops/Certifications='(0.3-0.6]'             1
+Workshops/Certifications='(0.6-0.9]'             1
+Workshops/Certifications='(0.9-1.2]'        1.4315
+Workshops/Certifications='(1.2-1.5]'             1
+Workshops/Certifications='(1.5-1.8]'             1
+Workshops/Certifications='(1.8-2.1]'        0.6977
+Workshops/Certifications='(2.1-2.4]'             1
+Workshops/Certifications='(2.4-2.7]'             1
+Workshops/Certifications='(2.7-inf)'        1.0287
+AptitudeTestScore='(-inf-63]'               3.3614
+AptitudeTestScore='(63-66]'                 2.6156
+AptitudeTestScore='(66-69]'                 2.0104
+AptitudeTestScore='(69-72]'                 1.4914
+AptitudeTestScore='(72-75]'                 1.2144
+AptitudeTestScore='(75-78]'                 1.3052
+AptitudeTestScore='(78-81]'                 0.9085
+AptitudeTestScore='(81-84]'                 0.9162
+AptitudeTestScore='(84-87]'                 0.6314
+AptitudeTestScore='(87-inf)'                0.4737
+SoftSkillsRating='(-inf-3.18]'               3.801
+SoftSkillsRating='(3.18-3.36]'              1.5957
+SoftSkillsRating='(3.36-3.54]'              1.3115
+SoftSkillsRating='(3.54-3.72]'              1.1332
+SoftSkillsRating='(3.72-3.9]'               1.5492
+SoftSkillsRating='(3.9-4.08]'               1.1754
+SoftSkillsRating='(4.08-4.26]'               1.252
+SoftSkillsRating='(4.26-4.44]'              0.9006
+SoftSkillsRating='(4.44-4.62]'              0.9093
+SoftSkillsRating='(4.62-inf)'               0.7052
+ExtracurricularActivities=Yes               0.4843
+PlacementTraining=Yes                       0.3701
+SSC_Marks='(-inf-58.5]'                     1.3524
+SSC_Marks='(58.5-62]'                       1.0904
+SSC_Marks='(62-65.5]'                       1.3326
+SSC_Marks='(65.5-69]'                        1.132
+SSC_Marks='(69-72.5]'                        1.118
+SSC_Marks='(72.5-76]'                       1.0241
+SSC_Marks='(76-79.5]'                        0.841
+SSC_Marks='(79.5-83]'                       0.6665
+SSC_Marks='(83-86.5]'                       0.5182
+SSC_Marks='(86.5-inf)'                      0.6979
+HSC_Marks='(-inf-60.1]'                     1.0844
+HSC_Marks='(60.1-63.2]'                     1.2634
+HSC_Marks='(63.2-66.3]'                     1.2101
+HSC_Marks='(66.3-69.4]'                     1.2655
+HSC_Marks='(69.4-72.5]'                     1.2296
+HSC_Marks='(72.5-75.6]'                     1.0058
+HSC_Marks='(75.6-78.7]'                     0.8535
+HSC_Marks='(78.7-81.8]'                     0.9418
+HSC_Marks='(81.8-84.9]'                     0.8399
+HSC_Marks='(84.9-inf)'                      0.6736
+
+
+Time taken to build model: 2.63 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.07 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        8047               80.47   %
+Incorrectly Classified Instances      1953               19.53   %
+Kappa statistic                          0.5978
+Mean absolute error                      0.2702
+Root mean squared error                  0.3684
+Relative absolute error                 55.4761 %
+Root relative squared error             74.6395 %
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.840    0.244    0.826      0.840    0.833      0.598    0.884     0.911     NotPlaced
+                 0.756    0.160    0.774      0.756    0.765      0.598    0.884     0.844     Placed
+Weighted Avg.    0.805    0.209    0.804      0.805    0.804      0.598    0.884     0.883     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4874  929 |    a = NotPlaced
+ 1024 3173 |    b = Placed
+

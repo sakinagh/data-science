@@ -1,0 +1,88 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     placementdata
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    evaluate on training data
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                     Class
+Variable                         NotPlaced
+==========================================
+StudentID                                0
+CGPA                               -0.3856
+Internships                              0
+Projects                            -0.261
+Workshops/Certifications            -0.144
+AptitudeTestScore                  -0.0704
+SoftSkillsRating                    -0.664
+ExtracurricularActivities=Yes      -0.7459
+PlacementTraining=Yes              -0.9265
+SSC_Marks                          -0.0284
+HSC_Marks                          -0.0277
+Intercept                          17.8083
+
+
+Odds Ratios...
+                                     Class
+Variable                         NotPlaced
+==========================================
+StudentID                                1
+CGPA                                  0.68
+Internships                              1
+Projects                            0.7703
+Workshops/Certifications            0.8659
+AptitudeTestScore                    0.932
+SoftSkillsRating                    0.5148
+ExtracurricularActivities=Yes       0.4743
+PlacementTraining=Yes                0.396
+SSC_Marks                            0.972
+HSC_Marks                           0.9727
+
+
+Time taken to build model: 0.52 seconds
+
+=== Evaluation on training set ===
+
+Time taken to test model on training data: 0.14 seconds
+
+=== Summary ===
+
+Correctly Classified Instances        7998               79.98   %
+Incorrectly Classified Instances      2002               20.02   %
+Kappa statistic                          0.5895
+Mean absolute error                      0.2774
+Root mean squared error                  0.3728
+Relative absolute error                 56.9546 %
+Root relative squared error             75.5358 %
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.825    0.234    0.829      0.825    0.827      0.589    0.879     0.906     NotPlaced
+                 0.766    0.175    0.759      0.766    0.762      0.589    0.879     0.842     Placed
+Weighted Avg.    0.800    0.210    0.800      0.800    0.800      0.589    0.879     0.879     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4785 1018 |    a = NotPlaced
+  984 3213 |    b = Placed
+

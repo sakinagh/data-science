@@ -1,0 +1,207 @@
+
+Intro Data Science Lab 3 Report 
+Sakina Ghafoor 
+
+In this assignment the same dataset as Lab 2 is used. It is called "placementdata" and 
+has historic rows and has already been cleaned previously. 
+
+                               ~Weka Output Analyses~ 
+
+1_weka_logistic
+Correctly Classified Instances        7998               79.98   %
+Incorrectly Classified Instances      2002               20.02   %
+Kappa statistic                          0.5895
+    a    b   <-- classified as
+ 4785 1018 |    a = NotPlaced
+  984 3213 |    b = Placed
+This logistic regression was done with the default settings on the training set. There is a 
+moderate kappa value with almost 80% accuracy. The performance is reasonable. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2_weka_logistic_discretize
+Correctly Classified Instances        8047               80.47   %
+Incorrectly Classified Instances      1953               19.53   %
+Kappa statistic                          0.5978
+    a    b   <-- classified as
+ 4874  929 |    a = NotPlaced
+ 1024 3173 |    b = Placed
+With the discretize filter in preprocess, similar results are shown compared to the  
+previous model. With the accuracy and kappa value, the performance is reasonable/moderate.
+I decided to use cross validation instead of the training set to see if performance 
+increased.  
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+3_weka_logistic_cross_val
+Correctly Classified Instances        7998               79.98   %
+Incorrectly Classified Instances      2002               20.02   %
+Kappa statistic                          0.5895
+    a    b   <-- classified as
+ 4783 1020 |    a = NotPlaced
+  982 3215 |    b = Placed
+With cross validation and 10 folds, there is again similar results with this model and the
+previous ones for logistic. So, the performance is moderate and reasonable. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+4_weka_ibk
+Correctly Classified Instances       10000              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+    a    b   <-- classified as
+ 5803    0 |    a = NotPlaced
+    0 4197 |    b = Placed
+Even though a perfect kappa value and accuracy is shown here, it is likely that this model
+has errors due to overfitting. This could be because of no cross validation. So, this model
+is not one that should be used for this dataset. I decided to experiment with cross 
+validation to see if results improved. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5_weka_ibk_cross_val
+Correctly Classified Instances        7250               72.5    %
+Incorrectly Classified Instances      2750               27.5    %
+Kappa statistic                          0.4353
+    a    b   <-- classified as
+ 4433 1370 |    a = NotPlaced
+ 1380 2817 |    b = Placed
+Compared to the previous model, this model is more accurate with cross validation and 10 
+folds. However, compared to the logistic model, this one has a slight decrease in accuracy
+and the kappa value. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+6_weka_ibk_cross_val_k3
+Correctly Classified Instances        7598               75.98   %
+Incorrectly Classified Instances      2402               24.02   %
+Kappa statistic                          0.5053
+    a    b   <-- classified as
+ 4651 1152 |    a = NotPlaced
+ 1250 2947 |    b = Placed
+Here I decided to adjust the k value to 3 for this model (under KNN in the ibk settings)
+after including cross validation and 10 folds. The increase in kappa and accuracy show 
+that having more neighbors in ibk improves model performance. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+7_weka_ibk_cross_val_dist_weight
+Correctly Classified Instances        7250               72.5    %
+Incorrectly Classified Instances      2750               27.5    %
+Kappa statistic                          0.4353
+    a    b   <-- classified as
+ 4433 1370 |    a = NotPlaced
+ 1380 2817 |    b = Placed
+In this model, instead of changing the k value with cross validation, the distance weighting
+was changed to 1/distance. This did not improve the model's performance and did the same 
+as the ibk model with only cross validation. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+8_weka_ibk_cross_val_discretize
+Correctly Classified Instances        7603               76.03   %
+Incorrectly Classified Instances      2397               23.97   %
+Kappa statistic                          0.506 
+    a    b   <-- classified as
+ 4663 1140 |    a = NotPlaced
+ 1257 2940 |    b = Placed
+Here cross validation was done with the discretize filter in preprocess. The accuracy and 
+kappa value increased, indicating better performance. Among all the ibk models I 
+experimented with, this one had the highest performance results. So, I decided to use the 
+discretize filter with other models to compare. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+9_weka_kstar_cross_val_discretize
+Correctly Classified Instances        7841               78.41   %
+Incorrectly Classified Instances      2159               21.59   %
+Kappa statistic                          0.5596
+    a    b   <-- classified as
+ 4625 1178 |    a = NotPlaced
+  981 3216 |    b = Placed
+This model is K star with cross validation (10 folds) and the discretize filter. Compared to
+the ibk model the K star model did better. Compared to the logistic model it did not do 
+better in regards to accuracy and the kappa value. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+10_weka_LWL_cross_val_discretize
+Correctly Classified Instances        6886               68.86   %
+Incorrectly Classified Instances      3114               31.14   %
+Kappa statistic                          0.3692
+    a    b   <-- classified as
+ 4041 1762 |    a = NotPlaced
+ 1352 2845 |    b = Placed
+This model is the LWL with cross validation (10 folds) and the discretize filter. Compared 
+to the ibk, K star, and logistic model, the LWL model did worse. This model is not 
+recommended to use for this dataset. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+11_weka_simplekmeans
+Clustered Instances
+0       4740 ( 47%)
+1       2754 ( 28%)
+2       2506 ( 25%)
+This model is the Simple K Means model with default settings and with the training set. For
+this model, the number of clusters was set to 3 and the max iterations was set to 100. The
+Cluster 1 seems to include higher performing students who have been placed. Cluster 0 seems
+to included those not placed. The performance for this model seems reasonable. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+12_weka_simplekmeans_discretize
+Clustered Instances
+0       5495 ( 55%)
+1       3308 ( 33%)
+2       1197 ( 12%)
+Compared to the previous Simple K Means model, this one seems to have a less balanced 
+distribution among the clusters. With the discretize filter, the model performance may have
+decreased and the model cannot separate between groups in the dataset. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+13_weka_simplekmeans_normalize
+Clustered Instances
+0       4740 ( 47%)
+1       2754 ( 28%)
+2       2506 ( 25%)
+With a normalize filter applied instead of discretize, the results seem to have improved. 
+These results show that the original Simple K Means model without a filter is reasonable. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+14_weka_EM
+Clustered Instances
+0       4257 ( 43%)
+1       3212 ( 32%)
+2       2531 ( 25%)
+Log likelihood: -24.59468
+Took a long time to generate, around 40 seconds. The clusters for this model seem to be
+balanced. However, the log likelihood value shows a less confident fit for this model. This
+model may not be effective or reasonable compared to the previous ones. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+15_weka_EM_normalize
+Clustered Instances
+0       4257 ( 43%)
+1       3212 ( 32%)
+2       2531 ( 25%)
+Log likelihood: -0.56023
+Took a long time to generate, around 40 seconds. To improve the model, the normalize filter
+was applied. The clusters stayed the same but the log likelihood got closer to 0. Even with 
+a negative value, this model seems to be more reasonable since a lower negative log 
+likelihood indicates a better fit for the model. 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                                        ~Conclusions~
+There are many key findings in this lab assignment. The logistic and simple k means models
+provided the best performance results and were effective in identifying groups. Overall, 
+the logistic model had the most effective results. The EM model was shown to be a 
+potentially expensive model with time and maybe inaccurate results. For this specific
+dataset, the results and analyses show that sometimes more simple models can perform
+better than more complex models (e.g. with more filters). Additionally, using cross 
+validation with 10 folds was shown to be effective in model performance. 
+

@@ -1,0 +1,53 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.lazy.IBk -K 1 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     placementdata-weka.filters.unsupervised.attribute.Discretize-B10-M-1.0-Rfirst-last-precision6
+Instances:    10000
+Attributes:   12
+              StudentID
+              CGPA
+              Internships
+              Projects
+              Workshops/Certifications
+              AptitudeTestScore
+              SoftSkillsRating
+              ExtracurricularActivities
+              PlacementTraining
+              SSC_Marks
+              HSC_Marks
+              PlacementStatus
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 1 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        7603               76.03   %
+Incorrectly Classified Instances      2397               23.97   %
+Kappa statistic                          0.506 
+Mean absolute error                      0.2675
+Root mean squared error                  0.4511
+Relative absolute error                 54.9234 %
+Root relative squared error             91.4154 %
+Total Number of Instances            10000     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.804    0.299    0.788      0.804    0.796      0.506    0.802     0.827     NotPlaced
+                 0.701    0.196    0.721      0.701    0.710      0.506    0.802     0.715     Placed
+Weighted Avg.    0.760    0.256    0.760      0.760    0.760      0.506    0.802     0.780     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 4663 1140 |    a = NotPlaced
+ 1257 2940 |    b = Placed
+
