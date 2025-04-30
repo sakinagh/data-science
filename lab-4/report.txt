@@ -1,0 +1,42 @@
+Report on Unsupervised Collective Learning System for Tic Tac Toe
+
+This report reflects on the observations made while testing the Tic Tac Toe program with different values of betaReward and betaPunish.
+The program implements an unsupervised collective learning scheme, using a State Transition Matrix (STM) and an algedonic learning algorithm. 
+The primary goal of this report is to provide information about which scheme was better, including comparisons between R/P, R/Inaction, and different values of Beta for Reward and Beta for Punishment.
+
+
+Observations
+
+Early observations (R = 0.5, P = 0.5)
+In the initial trials, the AI lost the first few games. However, its performance improved dramatically after the first reward, and soon it was playing very well, often forcing ties.
+
+Reward / Inaction (R = 0.5, P = 0)
+When the punishment was set to zero, the AI's learning was inconsistent. It won some games, but its overall strategy did not seem to improve significantly.
+
+Lower beta values (R = 0.25, P = 0.25)
+With lower beta values, the AI learned very slowly. It did not exhibit any noticeable improvement within the duration of testing.
+
+Higher beta values (R = 0.75, P = 0.75)
+Higher beta values resulted in faster learning.
+
+Different beta values (R = 0.5, P = 0.25)
+The most effective learning occurred with a higher reward and a lower punishment. The AI learned to win and was not discouraged by occasional losses.
+It consistently improved and adapted its strategy. It was similar to the R=0.5 P=0.5 for some reason.
+
+
+Results and Analysis
+The testing revealed that different combinations of beta values significantly impact the AI's learning ability. The following is a general ranking of the effectiveness of each scheme:
+
+Different beta values: R = 0.5, P = 0.25
+
+Early observations: R = 0.5, P = 0.5
+
+Reward / Inaction: R = 0.5, P = 0
+
+Lower beta values: R = 0.25, P = 0.25
+
+Higher beta values: R = 0.75, P = 0.75
+
+The most effective learning occurred with a combination of reward and punishment, where reward was higher than punishment.
+This aligns with the understanding that reward is more effective than punishment, but a combination of both, in moderation, is optimal.
+
